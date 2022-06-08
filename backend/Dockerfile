@@ -2,8 +2,12 @@
 
 FROM node:lts-alpine
 
-COPY ./     /app
+COPY ./     /app/
+
+RUN apk update
+
+WORKDIR /app
 
 RUN npm install
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start:dev"]
